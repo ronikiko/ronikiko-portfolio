@@ -311,17 +311,55 @@ export function Hero() {
   )
 }
 
+/* ===== PHOTO CARD ===== */
+function PhotoCard({ className = '' }) {
+  return (
+    <div className={`id-card ${className}`}>
+      <div className="id-card-img-wrap">
+        <img
+          src="/me.png"
+          alt="Roni Kiko"
+          className="id-card-img"
+          onError={(e) => { e.currentTarget.style.display = 'none' }}
+        />
+        <div className="id-card-initials">RK</div>
+        <div className="id-card-scanlines" />
+        <div className="id-card-scan" />
+        <div className="id-card-tint" />
+        <span className="id-card-corner tl" />
+        <span className="id-card-corner tr" />
+        <span className="id-card-corner bl" />
+        <span className="id-card-corner br" />
+      </div>
+      <div className="id-card-info">
+        <div className="id-card-header">
+          <span className="id-card-badge">SYS // AUTHORIZED</span>
+          <span className="id-card-id">ID-7731-RK</span>
+        </div>
+        <div className="id-card-name">RONI KIKO</div>
+        <div className="id-card-role">Full-Stack Engineer</div>
+        <div className="id-card-status">
+          <span className="id-card-dot" />
+          STATUS: ACTIVE
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* ===== ABOUT ===== */
 export function About() {
   return (
     <section className="scene about" data-section="about">
       <div className="about-inner">
-        <div>
-          <div className="section-num fade-in"><span className="bar" /> 02 / About</div>
-          <h2 className="quote fade-in d1">
-            <span className="mark">/</span>
-            I build <span className="em">composed systems</span> at the seam where interface meets infrastructure.
-          </h2>
+        <div className="about-top">
+          <div>
+            <div className="section-num fade-in"><span className="bar" /> 02 / About</div>
+            <h2 className="quote fade-in d1">
+              <span className="mark">/</span>
+              I build <span className="em">composed systems</span> at the seam where interface meets infrastructure.
+            </h2>
+          </div>
         </div>
 
         <div className="body">
@@ -340,11 +378,7 @@ export function About() {
             </p>
           </div>
 
-          <CodeWindow
-            filename="roni.ts"
-            lines={ABOUT_CODE}
-            className="fade-in d3"
-          />
+          <PhotoCard className="fade-in d3" />
         </div>
       </div>
     </section>
